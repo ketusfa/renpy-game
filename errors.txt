@@ -1,0 +1,14 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/777.rpy", line 33: expected statement.
+    textbutton _("КВАДРАТ") action ToggleT15Cut()
+                ^
+
+File "game/777.rpy", line 36: expected statement.
+    textbutton _("ЧИСЛА") action ToggleT15Num()
+                ^
+
+Ren'Py Version: Ren'Py 8.0.3.22090809
+Tue Feb 13 11:44:27 2024
