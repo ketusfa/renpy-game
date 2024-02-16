@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/777.rpy", line 33: expected statement.
-    textbutton _("КВАДРАТ") action ToggleT15Cut()
-                ^
-
-File "game/777.rpy", line 36: expected statement.
-    textbutton _("ЧИСЛА") action ToggleT15Num()
-                ^
+File "game/script.rpy", line 93: expected 'image_name_component' not found.
+    hide
+        ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Feb 13 11:44:27 2024
+Fri Feb 16 12:03:42 2024

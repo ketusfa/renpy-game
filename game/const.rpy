@@ -20,6 +20,7 @@ define audio.little = "audio/home.mp3"
 define audio.two = "audio/fripperies.mp3"
 define audio.battle = "audio/battle.mp3"
 define audio.frozen = "audio/frozen.mp3"
+define audio.memory = "audio/memory.mp3"
 
 # для поиска  предметов и викторины
 init python:
@@ -33,6 +34,8 @@ init python:
 init:
     $ pos3 = Position(xalign = 0.5, yalign = 0.5) 
     $ pos4 = Position(xalign = 0.55, yalign = 0.7)
+    $ pos_g = Position(xalign = 0.35, yalign = 0.5)
+    $ pos_s = Position(xalign = 0.7, yalign = 0.7)
 
 
 

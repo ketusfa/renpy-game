@@ -1,3 +1,9 @@
+# флаг подрезания картинок под квадратные клетки можно добавить в настройки или quick_menu:
+# textbutton _("КВАДРАТ") action ToggleT15Cut()
+
+# флаг подсказок в виде номеров клеток:
+# textbutton _("ЧИСЛА") action ToggleT15Num()
+
 # вызов игры из скрипта:
 # call t15_game("картинка", ширина в клетках, высота в клетках)
 
@@ -5,9 +11,8 @@
 # call t15_game("t15 1", 4, 3)
 
 init -2 python:
-
     # размеры поля в клетках
-    t15_w, t15_h = 3, 3
+    t15_w, t15_h = 4, 3
 
     # координаты пустой клетки
     t15_x, t15_y = 0, 0
@@ -61,16 +66,9 @@ screen t15_menu:
     hbox:
         align(1., .0)
         spacing 12
-        textbutton "1" action ToggleT15Num()
-        textbutton "#" action ToggleT15Cut()
+        textbutton "ЧИСЛА" action ToggleT15Num()
+        textbutton "КВАДРАТ" action ToggleT15Cut()
         textbutton "X" action T15Escape()
-        
-    vbox:
-        # флаг подрезания картинок под квадратные клетки можно добавить в настройки или quick_menu:
-        textbutton _("КВАДРАТ") action ToggleT15Cut()
-
-        # флаг подсказок в виде номеров клеток:
-        textbutton _("ЧИСЛА") action ToggleT15Num()
 
 init -2:
 # ДАЛЬШЕ НИЧЕГО МЕНЯТЬ НЕ СТОИТ
