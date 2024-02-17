@@ -21,6 +21,7 @@ define audio.two = "audio/fripperies.mp3"
 define audio.battle = "audio/battle.mp3"
 define audio.frozen = "audio/frozen.mp3"
 define audio.memory = "audio/memory.mp3"
+define audio.good = "audio/good.mp3"
 
 # для поиска  предметов и викторины
 init python:
