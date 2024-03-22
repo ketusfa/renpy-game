@@ -12,7 +12,7 @@
 ##
 ## Символы "_()", окружающие название, отмечают его как пригодное для перевода.
 
-define config.name = _("Finaly project")
+define config.name = _("Отголоски")
 
 
 ## Определяет, показывать ли заголовок, данный выше, на экране главного меню.
@@ -37,7 +37,7 @@ define gui.about = _p("""
 ## постройке дистрибутивов. Оно должно содержать текст формата ASCII и не должно
 ## содержать пробелы, двоеточия и точки с запятой.
 
-define build.name = "Finalyproject"
+define build.name = "Echoes"
 
 
 ## Звуки и музыка ##############################################################
@@ -186,10 +186,20 @@ init python:
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
 
+
     ## Чтобы архивировать файлы, классифицируйте их, например, как 'archive'.
 
-    # build.classify('game/**.png', 'archive')
-    # build.classify('game/**.jpg', 'archive')
+    build.classify('game/**.png', 'archive')
+    build.classify('game/**.jpg', 'archive')
+    build.classify('game/**.ogg', 'archive')
+    build.classify('game/**.mp3', 'archive')
+    build.classify('game/**.png', 'archive')
+    build.classify('game/**.psd', 'archive')
+    build.classify('game/**.jpg', 'archive')
+    build.classify('game/**.webp', 'archive')
+
+    build.classify('game/**.rpy', 'archive')
+    build.classify('game/**.rpyc', 'archive')
 
     ## Файлы, соответствующие образцам документации, дублируются в приложениях
     ## Mac, чтобы они появлялись и в приложении, и в zip архиве.

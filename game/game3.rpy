@@ -367,5 +367,6 @@ label t15_game(spr=t15_spr, w=t15_w, h=t15_h):
             ease t15_t_end align(.5, .5) zoom 1
 
     pause t15_t_end
+    jump lose
 
     return

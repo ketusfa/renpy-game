@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 93: expected 'image_name_component' not found.
-    hide
-        ^
+The label qqq is defined twice, at File "game/script.rpy", line 226:
+label qqq:
+and File "game/script.rpy", line 455:
+label qqq:
+
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Fri Feb 16 12:03:42 2024
+Sun Feb 18 11:52:13 2024

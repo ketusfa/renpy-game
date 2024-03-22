@@ -1,3 +1,8 @@
+# чтобы нельзя было мотать текст назад-вперед
+init python:
+    config.keymap["rollback"].remove("mousedown_4")
+    config.keymap["rollforward"].remove("mousedown_5")
+
 # Определение персонажей игры.
 define me = Character('Я', color="#c8ffc8")
 define G = Character('Генри', color="#4a69aa")
@@ -9,7 +14,9 @@ define n = Character(None, kind=nvl)
 label splashscreen:
     scene menu_logo with fade
     pause (2)
-
+    scene disk_logo with fade
+    pause (2)
+    
     return
 
 #константы для ввода музыки в игру
@@ -22,10 +29,13 @@ define audio.battle = "audio/battle.mp3"
 define audio.frozen = "audio/frozen.mp3"
 define audio.memory = "audio/memory.mp3"
 define audio.good = "audio/good.mp3"
+define audio.finaly = "audio/finaly.mp3"
+define audio.pain = "audio/pain.mp3"
 
 # для поиска  предметов и викторины
 init python:
     res = False
+    qwer = 0
 
 # для секретных реплик в конце
 init python:
@@ -70,3 +80,32 @@ init:
     transform bluring(blur1=0, blur2=16, t=1):
         blur blur1
         ease t blur blur2
+
+#открытие и закрытие глаз главного героя
+init python:
+    open = ImageDissolve("eye.png", 2.0, 20, reverse=False)
+    close = ImageDissolve("eye.png", 2.0, 20, reverse=True)
+
+init:
+    transform txt_up:
+        yalign 1.5
+        linear 30.0 yalign -1.5
+
+
+
+# Курсор сразу находиться на нужном выборе и его нельзя от туда сдвинуть 
+init python:
+    def RigMouse():
+        currentpos = renpy.get_mouse_pos() ## Координаты текущего положения курсора
+        targetpos = [963, 351] ## Координаты нужного выбора
+        if currentpos[1] > targetpos[1] or currentpos[1] < targetpos[1] or currentpos[0] > targetpos[0] or currentpos[0] < targetpos[0]: 
+            renpy.set_mouse_pos(targetpos[0], targetpos[1], 0.1)
+
+screen rigged_choice(items):
+    style_prefix "choice"
+
+    vbox:
+        for i in items:
+            textbutton i.caption action i.action
+
+    timer 1.0/30.0 repeat True action Function(RigMouse)
